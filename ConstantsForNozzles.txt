@@ -1,0 +1,100 @@
+# These values are used in all of the nozzle examples.
+
+#All coordination information comes from TsDefaultParameters.
+#IEC 61217 compliance
+
+#Fixed Reference system (If)     => World volume
+#Gantry coordination system (Ig) => GantryCoordination
+#Source coordination system (S)  => BeamPosition rotateX(180), Z position w.r.t GantryCoordination
+#Beam source coordinate system rotate 180 and translate along z w.r.t g.
+#-> Y is -Y. we have to flip phase space data.
+#Isocenter coordination system (Io)
+
+d:Ge/World/HLX = 1. m
+d:Ge/World/HLY = 1. m
+d:Ge/World/HLZ = 3. m
+
+#S2I
+#d:Ge/S2I = 3.0 m
+
+#Gantry coordination system (Ig)
+s:Ge/Gantry/Parent = "World"
+s:Ge/Gantry/Type   = "Group"
+d:Ge/Gantry/TransX = 0. m
+d:Ge/Gantry/TransY = 0. m
+d:Ge/Gantry/TransZ = 0. m
+d:Ge/Gantry/RotX   = 0. deg
+d:Ge/Gantry/RotY   = 0. deg
+d:Ge/Gantry/RotZ   = 0. deg
+
+# Default Beam position
+s:Ge/BeamPosition/Parent = "Gantry"
+s:Ge/BeamPosition/Type   = "Group"
+d:Ge/BeamPosition/TransX = 0. m
+d:Ge/BeamPosition/TransY = 0. m
+d:Ge/BeamPosition/TransZ = 3.0 m
+d:Ge/BeamPosition/RotX   = 180. deg
+d:Ge/BeamPosition/RotY   = 0. deg
+d:Ge/BeamPosition/RotZ   = 0. deg
+
+b:Ts/ShowCPUTime                  = "true"
+i:Ts/ShowHistoryCountAtInterval   = 0
+b:Ts/ShowHistoryCountOnSingleLine = "False"
+
+########################################
+#Material
+
+sv:Ma/Aluminum/Components = 1 "Aluminum"
+uv:Ma/Aluminum/Fractions = 1 1.0
+d:Ma/Aluminum/Density = 2.6989 g/cm3
+s:Ma/Aluminum/DefaultColor = "skyblue"
+i:Ma/Aluminum/AtomicNumber = 13
+d:Ma/Aluminum/MeanExcitationEnergy = 145.0 eV
+d:Ma/Aluminum/AtomicMass = 26.98154 g/mole
+
+sv:Ma/PMMA/Components = 3 "Carbon" "Oxygen" "Hydrogen"
+uv:Ma/PMMA/Fractions = 3 0.333333 0.133333 0.533333
+d:Ma/PMMA/Density = 1.19 g/cm3
+s:Ma/PMMA/State = "Solid"
+d:Ma/PMMA/Temperature = 298.15 kelvin
+s:Ma/PMMA/DefaultColor = "orange"
+d:Ma/PMMA/Pressure = 100E3 pascal
+
+
+
+########################################
+# Dummy beam
+########################################
+s:So/Example/Type                     = "Beam"
+s:So/Example/Component                = "BeamPosition"
+s:So/Example/BeamParticle             = "proton"
+d:So/Example/BeamEnergy               = 64.0 MeV
+u:So/Example/BeamEnergySpread         = 0.47 # 0.3MeV/64MeV*100
+s:So/Example/BeamPositionDistribution = "Gaussian"
+s:So/Example/BeamPositionCutoffShape = "Ellipse"
+
+d:So/Example/BeamPositionCutoffX = 10. cm # X extent of position (if Flat or Gaussian)
+d:So/Example/BeamPositionCutoffY = 10. cm # Y extent of position (if Flat or Gaussian)
+d:So/Example/BeamPositionSpreadX = 0.1 cm
+d:So/Example/BeamPositionSpreadY = 0.1 cm
+
+s:So/Example/BeamAngularDistribution = "Gaussian"
+d:So/Example/BeamAngularCutoffX = 90. deg
+d:So/Example/BeamAngularCutoffY = 90. deg
+d:So/Example/BeamAngularSpreadX  = 0.001 rad
+d:So/Example/BeamAngularSpreadY  = 0.001 rad
+
+i:So/Example/NumberOfHistoriesInRun   = 10000
+
+
+########################################
+# Physics 
+########################################
+#sv:Ph/Default/Modules = 6 "g4em-standard_opt4" "g4h-elastic_HP" "g4h-phy_QGSP_BIC_HP" "g4decay"  "g4stopping" "g4ion-binarycascade"
+sv:Ph/Default/Modules = 6 "g4em-standard_opt4" "g4h-elastic_HP" "g4h-phy_QGSP_BIC_HP" "g4decay"  "g4stopping" "g4ion-binarycascade" 
+i:Tf/Verbosity = 1
+
+########################################
+# Sequence control
+########################################
+b:Ts/PauseBeforeSequence = "F"

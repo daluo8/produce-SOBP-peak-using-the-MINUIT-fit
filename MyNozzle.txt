@@ -1,0 +1,218 @@
+includeFile = ConstantsForNozzles.txt
+
+##########################
+#1.First scatterer
+#15 um aluminum foil
+s:Ge/Scatterer1/Type = "Group"
+s:Ge/Scatterer1/Parent = "Gantry"
+d:Ge/Scatterer1/TranX = 0.0 cm
+d:Ge/Scatterer1/TranY = 0.0 cm
+d:Ge/Scatterer1/TranZ = 295.0 cm#next to the proton source
+d:Ge/Scatterer1/RotX = 0. deg
+d:Ge/Scatterer1/RotY = 0. deg
+d:Ge/Scatterer1/RotZ = 0. deg
+s:Ge/Scatterer1/Message = "Constructing IBA TsScatterer1"
+
+# Lollipop 1:
+s:Ge/Scatterer1/L1/Type   = "Group"
+s:Ge/Scatterer1/L1/Parent = "Scatterer1"
+d:Ge/Scatterer1/L1/TransX = 0.0 cm
+d:Ge/Scatterer1/L1/TransY = 0.0 cm
+d:Ge/Scatterer1/L1/TransZ = 0.0 cm
+d:Ge/Scatterer1/L1/RotX   = 0. deg
+d:Ge/Scatterer1/L1/RotY   = 0. deg
+d:Ge/Scatterer1/L1/RotZ   = 0. deg
+
+# L1 Aluminum Foil:
+s:Ge/Scatterer1/L1/AlFoil/Parent   = "Scatterer1/L1"
+s:Ge/Scatterer1/L1/AlFoil/Type     = "TsBox"
+s:Ge/Scatterer1/L1/AlFoil/Material = "Aluminum"
+d:Ge/Scatterer1/L1/AlFoil/HLX      = 20.0 cm
+d:Ge/Scatterer1/L1/AlFoil/HLY      = 20.0 cm
+d:Ge/Scatterer1/L1/AlFoil/HLZ      = 7.5 um
+d:Ge/Scatterer1/L1/AlFoil/TransX   = 0.0 cm
+d:Ge/Scatterer1/L1/AlFoil/TransY   = 0.0 cm
+d:Ge/Scatterer1/L1/AlFoil/TransZ   = 0.0 cm
+d:Ge/Scatterer1/L1/AlFoil/RotX     = 0. deg
+d:Ge/Scatterer1/L1/AlFoil/RotY     = 0. deg
+d:Ge/Scatterer1/L1/AlFoil/RotZ     = 0. deg
+
+######################
+#2.Exit window
+#thickness Kapton window
+s:Ge/ExitWindow/Parent = "Gantry"
+s:Ge/ExitWindow/Type = "TsCylinder"
+s:Ge/ExitWindow/Material = "Kapton"
+d:Ge/ExitWindow/RMin = 0.0 mm
+d:Ge/ExitWindow/RMax = 4.0 mm
+d:Ge/ExitWindow/HL = 25 um
+d:Ge/ExitWindow/SPhi = 0.0 deg
+d:Ge/ExitWindow/DPhi = 360.0 deg
+d:Ge/ExitWindow/TransX = 0.0 mm
+d:Ge/ExitWindow/TransY = 0.0 mm
+d:Ge/ExitWindow/TransZ = 280.0 cm
+d:Ge/ExitWindow/RotX = 0.0 deg
+d:Ge/ExitWindow/RotY = 0.0 deg
+d:Ge/ExitWindow/RotZ = 0.0 deg
+b:Ge/ExitWindow/Include = "True"
+s:Ge/ExitWindow/DrawingStyle = "Solid"
+
+
+######################
+#3.Second scatterer
+#15um Aluminum foil
+s:Ge/Scatterer2/Type = "Group"
+s:Ge/Scatterer2/Parent = "Gantry"
+d:Ge/Scatterer2/TranX = 0.0 cm
+d:Ge/Scatterer2/TranY = 0.0 cm
+d:Ge/Scatterer2/TranZ = 270.0 cm
+d:Ge/Scatterer2/RotX = 0. deg
+d:Ge/Scatterer2/RotY = 0. deg
+d:Ge/Scatterer2/RotZ = 0. deg
+s:Ge/Scatterer2/Message = "Constructing IBA TsScatterer2"
+
+
+# Lollipop 1:
+s:Ge/Scatterer2/L1/Type   = "Group"
+s:Ge/Scatterer2/L1/Parent = "Scatterer2"
+d:Ge/Scatterer2/L1/TransX = 0.0 cm
+d:Ge/Scatterer2/L1/TransY = 0.0 cm
+d:Ge/Scatterer2/L1/TransZ = 0.0 cm
+d:Ge/Scatterer2/L1/RotX   = 0. deg
+d:Ge/Scatterer2/L1/RotY   = 0. deg
+d:Ge/Scatterer2/L1/RotZ   = 0. deg
+
+# L1 Aluminum Foil:
+s:Ge/Scatterer2/L1/AlFoil/Parent   = "Scatterer2/L1"
+s:Ge/Scatterer2/L1/AlFoil/Type     = "TsBox"
+s:Ge/Scatterer2/L1/AlFoil/Material = "Aluminum"
+d:Ge/Scatterer2/L1/AlFoil/HLX      = 20.0 cm
+d:Ge/Scatterer2/L1/AlFoil/HLY      = 20.0 cm
+d:Ge/Scatterer2/L1/AlFoil/HLZ      = 7.5 um
+d:Ge/Scatterer2/L1/AlFoil/TransX   = 0.0 cm
+d:Ge/Scatterer2/L1/AlFoil/TransY   = 0.0 cm
+d:Ge/Scatterer2/L1/AlFoil/TransZ   = 0.0 cm
+d:Ge/Scatterer2/L1/AlFoil/RotX     = 0. deg
+d:Ge/Scatterer2/L1/AlFoil/RotY     = 0. deg
+d:Ge/Scatterer2/L1/AlFoil/RotZ     = 0. deg
+#Brass Stopper:
+s:Ge/Scatterer2/L1/Stopper/Parent = "Scatterer2/L1/AlFoil"
+s:Ge/Scatterer2/L1/Stopper/Type = "TsCylinder"
+s:Ge/Scatterer2/L1/Stopper/Material = "Brass"
+d:Ge/Scatterer2/L1/Stopper/RMin = 0.0 cm
+d:Ge/Scatterer2/L1/Stopper/RMax = 2.0 mm
+d:Ge/Scatterer2/L1/Stopper/HL = 7.5 um
+d:Ge/Scatterer2/L1/Stopper/TransX = 0. cm 
+d:Ge/Scatterer2/L1/Stopper/TransY = 0. cm
+d:Ge/Scatterer2/L1/Stopper/TransZ = 0. cm
+d:Ge/Scatterer2/L1/Stopper/RotX = 0. deg
+d:Ge/Scatterer2/L1/Stopper/RotY = 0. deg
+d:Ge/Scatterer2/L1/Stopper/RotZ = 0. deg
+d:Ge/Scatterer2/L1/Stopper/SPhi = 0. deg
+d:Ge/Scatterer2/L1/Stopper/DPhi = 360. deg
+######################
+#4.Tube shape collimator:(here uses snout)
+# Snout
+s:Ge/Snout/Type		= "Group"
+s:Ge/Snout/Parent	= "Gantry"
+d:Ge/Snout/TransX	= 0. m
+d:Ge/Snout/TransY	= 0. m
+d:Ge/Snout/TransZ	= 50. cm
+d:Ge/Snout/RotX		= 0. deg
+d:Ge/Snout/RotY		= 0. deg
+d:Ge/Snout/RotZ		= 0. deg
+s:Ge/Snout/Message 	= "Constructing Snout"
+
+s:Ge/Snout/Block/Parent 	= "Snout"
+s:Ge/Snout/Block/Type   	= "TsBox"
+s:Ge/Snout/Block/Material 	= "Brass"
+d:Ge/Snout/Block/HLX 		= 20.0 cm
+d:Ge/Snout/Block/HLY 		= 20.0 cm
+d:Ge/Snout/Block/HLZ 		= 2.0 cm#4cm in thickness
+d:Ge/Snout/Block/TransX		= 0. cm
+d:Ge/Snout/Block/TransY		= 0. cm
+d:Ge/Snout/Block/TransZ		= 0. cm
+d:Ge/Snout/Block/RotX		= 0. deg
+d:Ge/Snout/Block/RotY		= 0. deg
+d:Ge/Snout/Block/RotZ		= 0. deg
+
+# Snout: Hole in Brass Block
+s:Ge/Snout/Hole/Parent 		= "Snout/Block"
+s:Ge/Snout/Hole/Type   		= "TsCylinder"
+s:Ge/Snout/Hole/Material	= "Air"
+d:Ge/Snout/Hole/RMin 		=  0.0 cm
+d:Ge/Snout/Hole/RMax 		=  1.5 cm#3cm in diameter
+d:Ge/Snout/Hole/HL		    =  2.0 cm
+d:Ge/Snout/Hole/TransX 		=  0.0 cm
+d:Ge/Snout/Hole/TransY 		=  0.0 cm
+d:Ge/Snout/Hole/TransZ 		=  0.0 cm
+d:Ge/Snout/Hole/RotX 		=  0.0 deg
+d:Ge/Snout/Hole/RotY 		=  0.0 deg
+d:Ge/Snout/Hole/RotZ 		=  0.0 deg
+d:Ge/Snout/Hole/SPhi 		=  0.0 deg
+d:Ge/Snout/Hole/DPhi 		=  360.0 deg
+
+######################
+#5.RangeModulator
+s:Ge/RangeModulator/Type		= "Group"
+s:Ge/RangeModulator/Parent	= "Gantry"
+d:Ge/RangeModulator/TransX	= 0. m
+d:Ge/RangeModulator/TransY	= 0. m
+d:Ge/RangeModulator/TransZ	= 30. cm
+d:Ge/RangeModulator/RotX		= 0. deg
+d:Ge/RangeModulator/RotY		= 0. deg
+d:Ge/RangeModulator/RotZ		= 0. deg
+s:Ge/RangeModulator/Message 	= "Constructing RangeModulator"
+
+s:Ge/RangeModulator/Block/Parent 	= "RangeModulator"
+s:Ge/RangeModulator/Block/Type   	= "TsBox"
+s:Ge/RangeModulator/Block/Material 	= "Aluminum"
+d:Ge/RangeModulator/Block/HLX 		= 20.0 cm
+d:Ge/RangeModulator/Block/HLY 		= 20.0 cm
+d:Ge/RangeModulator/Block/HLZ 		= 5.0 mm  #modulator thickness
+d:Ge/RangeModulator/Block/TransX		= 0. cm
+d:Ge/RangeModulator/Block/TransY		= 0. cm
+d:Ge/RangeModulator/Block/TransZ		= 0. cm
+d:Ge/RangeModulator/Block/RotX		= 0. deg
+d:Ge/RangeModulator/Block/RotY		= 0. deg
+d:Ge/RangeModulator/Block/RotZ		= 0. deg
+
+
+######################
+#6.Scorer
+s:Ge/Phantom/Type = "TsBox"
+s:Ge/Phantom/Parent = "World"
+s:Ge/Phantom/Material = "G4_WATER"
+d:Ge/Phantom/HLX = 10.0 cm
+d:Ge/Phantom/HLY = 10.0 cm
+d:Ge/Phantom/HLZ = 2.0 cm
+d:Ge/Phantom/TransZ = -5. cm
+s:Ge/Phantom/Color = "blue"
+#i:Ge/Phantom/XBins = 10
+#i:Ge/Phantom/YBins = 10
+i:Ge/Phantom/ZBins = 400
+
+s:Sc/DoseAtPhantom/Quantity = "DoseToMedium"
+s:Sc/DoseAtPhantom/Component = "Phantom"
+s:Sc/DoseAtPhantom/OutputFile = "mydose"
+s:Sc/DoseAtPhantom/IfOutputFileAlreadyExists = "Increment"
+######################
+#7.Graphics:
+#s:Gr/ViewA/Type = "OpenGL"
+i:Gr/ViewA/WindowSizeX = 1024
+i:Gr/ViewA/WindowSizeY = 768
+d:Gr/ViewA/Theta                            = 30 deg
+d:Gr/ViewA/Phi                              = 20 deg
+s:Gr/ViewA/Projection                       = "Perspective"
+d:Gr/ViewA/PerspectiveAngle                 = 30 deg
+u:Gr/ViewA/Zoom                             = 2.
+u:Gr/ViewA/TransX                           = -.8
+u:Gr/ViewA/TransY                           = -.3
+b:Gr/ViewA/HiddenLineRemovalForTrajectories = "True"
+b:Gr/ViewA/IncludeAxes                      = "true"
+s:Gr/ViewA/AxesComponent                    = "Gantry"
+d:Gr/ViewA/AxesSize                         = 0.5 m
+
+i:Ts/ShowHistoryCountAtInterval = 1000
+i:Ts/NumberOfThreads = 8
+b:Ts/PauseBeforeQuit="True"
