@@ -5,3 +5,4 @@ The we use MINUIT2(a C++ rewritten version of MINUIT) to calculate the best weig
 In the folder "dosedata"are the BP dose-depth data which is saved as .csv format.
 Then use drawBP.m to draw a SOBP curve.
 P.S You need to install the ROOT data calculate frame before use MINUIT2.
+ref to https://www.sciencedirect.com/science/article/pii/S1567173908001697
